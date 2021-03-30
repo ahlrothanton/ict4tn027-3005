@@ -2,10 +2,12 @@
 
 First weeks assignments.
 
-* [a) Get invited to HackTheBox](#a--get-invited-to-hackthebox)
-* [b) Install WebGoat and log in](#b--install-webgoat-and-log-in)
-* [c) Solve WebGoat assignments](#c--solve-webgoat-assignments)
-* [d) Summarize Darknet Diaries episode](#d--summarize-darknet-diaries-episode)
+## Table of Contents
+
+* [a) Get invited to HackTheBox](#a-get-invited-to-HackTheBox)
+* [b) Install WebGoat and log in](#b-install-webgoat-and-log-in)
+* [c) Solve WebGoat assignments](#c-solve-webgoat-assignments)
+* [d) Summarize Darknet Diaries episode](#c-solve-webgoat-assignments)
 
 ---
 

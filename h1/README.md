@@ -1,58 +1,51 @@
 # H1
 
-* [a) Hanki kutsu HackTheBoxiin.](#a--hanki-kutsu-hacktheboxiin)
-* [b) Asenna WebGoat ja kokeile, että pääset kirjautumaan sisään.](#b--asenna-webgoat-ja-kokeile--ett--p--set-kirjautumaan-sis--n)
-* [c) Ratkaise WebGoatista tehtävät "HTTP Basics", "Developer tools", "CIA Triad" ja "A1 Injection (intro)". Katso vinkit alta.](#c--ratkaise-webgoatista-teht-v-t--http-basics----developer-tools----cia-triad--ja--a1-injection--intro---katso-vinkit-alta)
-* [d) Kuuntele jokin maksuvälineisiin liittyvä jakso Darknet Diaries -podcastista. Kuvaile tiiviisti tämä murto ja peilaa sitä Mika Raution esitykseen "Stealing your payment card data". Voit hakea lisätietoa tapauksesta myös muista lähteistä. (Tässä d-kohdassa ei tarvitse tehdä mitään teknistä harjoitusta, vain kirjoitettu vastaus. Ei tarvitse tavoitella kirjallisuuden Finlandiaa, tiivis vastaus riittää). Vinkki: AntennaPod on hyvä kännykkäohjelma podcastien kuunteluun.](#d--kuuntele-jokin-maksuv-lineisiin-liittyv--jakso-darknet-diaries--podcastista-kuvaile-tiiviisti-t-m--murto-ja-peilaa-sit--mika-raution-esitykseen--stealing-your-payment-card-data--voit-hakea-lis-tietoa-tapauksesta-my-s-muista-l-hteist---t-ss--d-kohdassa-ei-tarvitse-tehd--mit--n-teknist--harjoitusta--vain-kirjoitettu-vastaus-ei-tarvitse-tavoitella-kirjallisuuden-finlandiaa--tiivis-vastaus-riitt----vinkki--antennapod-on-hyv--k-nnykk-ohjelma-podcastien-kuunteluun)
-* [e) Vapaaehtoinen: Ratkaise lisää WebGoat-tehtäviä. Kuinka pitkälle pääsit?](#e--vapaaehtoinen--ratkaise-lis---webgoat-teht-vi--kuinka-pitk-lle-p--sit-)
-* [f) Vapaaehtoinen, haastava: Ratkaise kaikki WebGoat -tehtävät.](#f--vapaaehtoinen--haastava--ratkaise-kaikki-webgoat--teht-v-t)
+First weeks assignments.
+
+* [a) Get invited to HackTheBox](#a--get-invited-to-hackthebox)
+* [b) Install WebGoat and log in](#b--install-webgoat-and-log-in)
+* [c) Solve WebGoat assignments](#c--solve-webgoat-assignments)
+* [d) Summarize Darknet Diaries episode](#d--summarize-darknet-diaries-episode)
 
 ---
 
-## a) Hanki kutsu HackTheBoxiin.
+## a) Get invited to HackTheBox
 
-Ajattelin, että mahdollisesti pitäisi kehittäjäkonsolia käyttää ja tutkin sivuston koodia jonkun aikaa. Tovin pähkäiltyäni vilkaisin konsolia, ja olisikin heti pitänyt tajuta katsoa konsolista, kun ensimmäinen vinkki tuijotti minua sieltä.
-
-Vihje ohjasi etsimään mielenkiintoista javascript-tiedosta ja löysinkin heti inviteapi.min.js nimisen tiedoston, jossa oli obfuskoitu javascript funktio. En kokeillut avata funktiota vaan kokeilin suoraan makeInviteCode funktiota, joka ohjasi minut tekemään POST HTTP-kutsun /api/invite/how/to/generate. Alkuun curl:illa tehty POST kutsu ei palauttanut mitään, mutta kun tajusin nostaa curlin verbositeettiä, niin sain vastaukseksi "301 Moved Permanently". Sain seuraavan vihjeen, kun opastin curl:ia seuraamaan uudelleenohjauksia:
+- opened developer console and found the first clue, that pointed me to search interesting Javascript file
+- found inviteapi.min.js named file pretty quickly, that had obfuscated Javascript function. I didn't try to solve the obfuscation and just tried makeInviteCode function, that guided me to make POST HTTP request to /api/invite/how/to/generate.
+- I did a POST HTTP request with curl to /api/invite/how/to/generate and received BASE64 encoded string
 
     curl -L -v -X POST www.hackthebox.eu/api/invite/how/to/generate
 
-Kutsu antoi BASE64 enkoodatun merkkijonon, jonka sai auki näin:
+- I opened the encoded string like this and received the next clue
 
     echo "SW4gb3JkZXIgdG8gZ2VuZXJhdGUgdGhlIGludml0ZSBjb2RlLCBtYWtlIGEgUE9TVCByZXF1ZXN0IHRvIC9hcGkvaW52aXRlL2dlbmVyYXRl" | base64 -d
 
-"In order to generate the invite code, make a POST request to /api/invite/generate%"
+- The message said: "In order to generate the invite code, make a POST request to /api/invite/generate"
 
     curl -L -v -X POST www.hackthebox.eu/api/invite/generate
 
-Viimeisen base64 enkoodatun viestin avattuani pääsin sisälle hackthebox:iin.
+- call gave me another BASE64 encoded string, which I opened and it gave me the code to log in to HackTheBox
 
 ---
 
-## b) Asenna WebGoat ja kokeile, että pääset kirjautumaan sisään.
+## b) Install WebGoat and log in
 
-Latasin [WebGoat:in](https://hub.docker.com/r/webgoat/webgoat-8.0/) Docker:ille ja pääsin kirjautumaan sisään.
+I downloaded [WebGoat Docker image](https://hub.docker.com/r/webgoat/webgoat-8.0/), ran it and managed to log in.
 
 ---
 
-## c) Ratkaise WebGoatista tehtävät "HTTP Basics", "Developer tools", "CIA Triad" ja "A1 Injection (intro)". Katso vinkit alta.
+## c) Solve WebGoat assignments
+
+- HTTP Basics
+- Developer tools
+- CIA Triad
+- A1 Injection (intro)
 
 TBA
 
 ---
 
-## d) Kuuntele jokin maksuvälineisiin liittyvä jakso Darknet Diaries -podcastista. Kuvaile tiiviisti tämä murto ja peilaa sitä Mika Raution esitykseen "Stealing your payment card data". Voit hakea lisätietoa tapauksesta myös muista lähteistä. (Tässä d-kohdassa ei tarvitse tehdä mitään teknistä harjoitusta, vain kirjoitettu vastaus. Ei tarvitse tavoitella kirjallisuuden Finlandiaa, tiivis vastaus riittää). Vinkki: AntennaPod on hyvä kännykkäohjelma podcastien kuunteluun.
-
-TBA
-
----
-
-## e) Vapaaehtoinen: Ratkaise lisää WebGoat-tehtäviä. Kuinka pitkälle pääsit?
-
-TBA
-
----
-
-## f) Vapaaehtoinen, haastava: Ratkaise kaikki WebGoat -tehtävät.
+## d) Summarize Darknet Diaries episode
 
 TBA

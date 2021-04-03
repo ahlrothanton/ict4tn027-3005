@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "kalilinux/rolling"
+
+  # define an instance
+  config.vm.define "kali" do |instance|
+
+    # define a vm
+    instance.vm.provider :virtualbox do |v|
+      v.name = "kali"
+      v.gui = true
+      v.memory = 4096
+      v.cpus = 2
+    end
+
+  # provision
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    setxkbmap -layout fi
+  SHELL
+  end
+end

@@ -5,3 +5,7 @@ Course assignment returns
 ## Assignments
 
 - [H1](./h1/)
+
+## Other stuff
+
+- [tools](./tools)

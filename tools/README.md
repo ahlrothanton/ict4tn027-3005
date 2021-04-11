@@ -8,7 +8,7 @@ Simple tool(s) I made for me to use in this course.
 
 Deploy and/or start the development environment.
 
-./setup-dev-env.sh stop
+    ./setup-dev-env.sh stop
 
 Stops the development environment.
 

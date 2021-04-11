@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#
+# simple wrapper script around Vagrant
 
 # get current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -14,30 +16,21 @@ clear
 case $ACTION in
     "undeploy")
         echo "--- Undeploying development environment ---"
-        docker stop webgoat
-        docker rm webgoat
-        docker rmi webgoat/webgoat-8.0
-        docker system prune -f
         vagrant destroy -f
         ;;
     "stop")
         echo "--- Stopping development environment ---"
-        docker stop webgoat
         vagrant suspend
         ;;
 
     "deploy")
+        echo "--- Starting development environment ---"
+        # ensure vbquest is installed
+        vagrant plugin install vagrant-vbguest
+
         # setup Vagrant
         vagrant up
         vagrant status
-        echo "--- vagrant is running. Run 'vagrant ssh' for access ---"
-
-        # setup WebGoat
-        if [[ $(docker ps -a --filter "name=webgoat" --format '{{.Names}}') == "webgoat" ]]; then
-            docker start webgoat
-        else
-            docker run -p 8080:8080 -d --name webgoat -t webgoat/webgoat-8.0
-        fi
         ;;
     *)
       clear

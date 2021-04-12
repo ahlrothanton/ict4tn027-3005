@@ -9,6 +9,7 @@ Solutions for second weeks assignments.
 * [a) Explain Cyber Kill Chain tooling](#a-explain-cyber-kill-chain-tooling)
 * [b) Install and hack Metasploitable2](#b-install-and-hack-metasploitable2)
 * [c) Install and hack a machine from VulnHub](#c-install-and-hack-a-machine-from-vulnhub)
+* [d) Install and hack Metasploitable3](#d-install-and-hack-metasploitable3)
 
 ---
 

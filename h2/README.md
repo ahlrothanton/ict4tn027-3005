@@ -130,7 +130,39 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 
 ## c) Install and hack a machine from VulnHub
 
-- I started with [BlueMoon](https://www.vulnhub.com/entry/bluemoon-2021,679/) box from VulnHub, but I did't have enough time to make meaningful process as I spent a lot of time with Metasploitable3
+- I downloaded with [BlueMoon](https://www.vulnhub.com/entry/bluemoon-2021,679/) box from VulnHub and after some troubleshooting, got it in the same network as my Kali instance
+-  I started by finding the instance on my network and scanning for interesting ports
+
+    ```
+    sudo msfdb init
+    sudo msfconsole
+    workspace -a h2-c
+    nmap 172.28.128.0/24
+    nmap -sV 172.28.128.8
+    setg RHOSTS 172.28.128.8
+    ```
+
+- Target was running ftp, http and ssh, but none of the versions were vulnerable to known exploits
+- I checked the http server from browser and it said nothing interesting. I tried to scan the directories on that website, but it found nothing interesting
+
+    ```
+    use auxiliary/scanner/http/dir_listing
+    run
+
+    use auxiliary/scanner/http/dir_scanner
+    run
+
+    use auxiliary/scanner/http/files_dir
+    run
+    ```
+
+- I decided to try and brute force the ssh login with hydra
+
+    ```
+    hydra -l users.txt -P passwords.txt ssh://172.28.128.8
+    ```
+
+- I didn't get further than this, but I will continue and update my progress
 
 ---
 

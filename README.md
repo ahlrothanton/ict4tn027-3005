@@ -2,6 +2,8 @@
 
 Course assignment returns and tooling I used during the course.
 
+---
+
 ## Assignments
 
 - [H1](./h1/)
@@ -11,7 +13,9 @@ Course assignment returns and tooling I used during the course.
 
 * [terokarvinen.com, ict4tn027-3005](terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
 
-## Other stuff
+---
+
+## How to use my Vagrant setup
 
     vagrant up
 

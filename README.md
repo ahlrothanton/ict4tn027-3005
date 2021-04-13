@@ -7,6 +7,10 @@ Course assignment returns and tooling I used during the course.
 - [H1](./h1/)
 - [H2](./h2/)
 
+## References
+
+* [terokarvinen.com, ict4tn027-3005](terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
+
 ## Other stuff
 
     vagrant up

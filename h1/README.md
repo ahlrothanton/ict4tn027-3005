@@ -8,6 +8,7 @@ Solutions to first week assignments.
 * [b) Install WebGoat and login](#b-install-webgoat-and-login)
 * [c) Solve WebGoat assignments](#c-solve-webgoat-assignments)
 * [d) Install Kali Linux and test it out](#d-install-kali-linux-and-test-it-out)
+* [References](#references)
 
 ---
 
@@ -121,7 +122,7 @@ I downloaded [WebGoat Docker image](https://hub.docker.com/r/webgoat/webgoat-8.0
 
 ## d) Install Kali Linux and test it out
 
-I created a tool([setup-dev-env.sh](../tools/setup-dev-env.sh) bash script), that sets up a development environment for me. It runs WebGoat in Docker and Kali Linux on VirtualBox using Vagrant.
+I created a Vagrant setup ([Vagrantfile](../Vagrantfile)), that sets up a development environment for me. It runs WebGoat in Docker and Kali Linux on VirtualBox using Vagrant.
 
 I tried netcat to test if my local machine had port 53 open.
 
@@ -132,3 +133,11 @@ The port was closed as suspected: <i><b>localhost [127.0.0.1] 53 (domain) : Conn
     nc -v -w 3 -u localhost 53
 
 And interestinly it reported, that the 53/udp port was open: <i><b>localhost [127.0.0.1] 53 (domain) open</i></b>. The port is for local DNS responses, so it should be open.
+
+---
+
+## References
+
+* [terokarvinen.com, ict4tn027-3005](terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
+* [WebGoat Docker image](https://hub.docker.com/r/webgoat/webgoat-8.0/)
+* [My Vagrantfile](../Vagrantfile)

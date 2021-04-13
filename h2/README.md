@@ -337,4 +337,5 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 - [Hydra, Bruteforce tool](https://github.com/vanhauser-thc/thc-hydra)
 - [zxing.org, Decode images to text](https://zxing.org/w/decode.jspx)
 - [blog post](http://vxer.cn/?id=66)
+- [VulnHub, BlueMoon](https://www.vulnhub.com/entry/bluemoon-2021,679/)
 - [ahlrothanton, Vagrantfile](https://github.com/ahlrothanton/ict4tn027-3005/blob/main/Vagrantfile)

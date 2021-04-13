@@ -138,6 +138,6 @@ And interestinly it reported, that the 53/udp port was open: <i><b>localhost [12
 
 ## References
 
-* [terokarvinen.com, ict4tn027-3005](terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
+* [terokarvinen.com, ict4tn027-3005](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
 * [WebGoat Docker image](https://hub.docker.com/r/webgoat/webgoat-8.0/)
 * [My Vagrantfile](../Vagrantfile)

@@ -11,7 +11,7 @@ Course assignment returns and tooling I used during the course.
 
 ## References
 
-* [terokarvinen.com, ict4tn027-3005](terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
+* [terokarvinen.com, ict4tn027-3005](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
 
 ---
 

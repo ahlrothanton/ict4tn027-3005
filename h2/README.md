@@ -331,7 +331,7 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 
 ## Lähteet
 
-- [terokarvinen.com, ICT4TN027](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
+- [terokarvinen.com, ICT4TN027-3005](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
 - [Lockheedmartin, Intel Driven Defense](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
 - [Jaswal, N., 2016. Mastering Metasploit, Chapter 1](https://learning.oreilly.com/library/view/mastering-metasploit-/9781838980078/B15076_01_Final_ASB_ePub.xhtml#_idParaDest-30)
 - [Hydra, Bruteforce tool](https://github.com/vanhauser-thc/thc-hydra)

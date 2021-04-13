@@ -9,7 +9,7 @@ Solutions for week two assignments.
 * [b) Install and hack Metasploitable2](#b-install-and-hack-metasploitable2)
 * [c) Install and hack a machine from VulnHub](#c-install-and-hack-a-machine-from-vulnhub)
 * [d) Install and hack Metasploitable3](#d-install-and-hack-metasploitable3)
-* [Lähteet](laheet)
+* [References](#references)
 
 ---
 
@@ -329,7 +329,7 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 - now I had Meterpreter shell and working with the target was easier
 - I browsed the html directory and found phpmyadmin/config.inc.php, which contained credentials to phpmyadmin and they worked
 
-## Lähteet
+## References
 
 - [terokarvinen.com, ICT4TN027-3005](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
 - [Lockheedmartin, Intel Driven Defense](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)

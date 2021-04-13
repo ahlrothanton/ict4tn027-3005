@@ -1,7 +1,6 @@
 # H2
 
-Solutions for second weeks assignments.
-
+Solutions for week two assignments.
 
 ## Table of Contents
 
@@ -10,6 +9,7 @@ Solutions for second weeks assignments.
 * [b) Install and hack Metasploitable2](#b-install-and-hack-metasploitable2)
 * [c) Install and hack a machine from VulnHub](#c-install-and-hack-a-machine-from-vulnhub)
 * [d) Install and hack Metasploitable3](#d-install-and-hack-metasploitable3)
+* [Lähteet](laheet)
 
 ---
 
@@ -228,7 +228,7 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 
     ```
     docker run -it --rm -v /:/mnt alpine
-    
+
     whoami
     root
 
@@ -250,7 +250,7 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 
 ## d) Install and hack Metasploitable3
 
-- I created development setup on Vagrant, which has Metasploitable3(172.28.128.3) and Kali(172.28.128.3) instances, see [tools](../tools/)
+- I created development setup on Vagrant, which has Metasploitable3(172.28.128.3) and Kali(172.28.128.3) instances, see [Vagrnantfile](../Vagrantfile)
 - I logged into Kali machine and initiated the Metasploit database
 
     ```
@@ -328,3 +328,13 @@ Using the example from Mastering Metasploit to describe Cyber Kill Chain phases 
 
 - now I had Meterpreter shell and working with the target was easier
 - I browsed the html directory and found phpmyadmin/config.inc.php, which contained credentials to phpmyadmin and they worked
+
+## Lähteet
+
+- [terokarvinen.com, ICT4TN027](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/)
+- [Lockheedmartin, Intel Driven Defense](https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf)
+- [Jaswal, N., 2016. Mastering Metasploit, Chapter 1](https://learning.oreilly.com/library/view/mastering-metasploit-/9781838980078/B15076_01_Final_ASB_ePub.xhtml#_idParaDest-30)
+- [Hydra, Bruteforce tool](https://github.com/vanhauser-thc/thc-hydra)
+- [zxing.org, Decode images to text](https://zxing.org/w/decode.jspx)
+- [blog post](http://vxer.cn/?id=66)
+- [ahlrothanton, Vagrantfile](https://github.com/ahlrothanton/ict4tn027-3005/blob/main/Vagrantfile)

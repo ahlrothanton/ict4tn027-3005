@@ -52,11 +52,18 @@ Vagrant.configure("2") do |config|
 
     instance.vm.hostname = "webgoat"
     instance.vm.network "private_network", ip: '172.28.128.4'
+    instance.vm.network "forwarded_port", guest: 8080, host: 8080
+    instance.vm.network "forwarded_port", guest: 9090, host: 9090
 
     instance.vm.provider :virtualbox do |v|
       v.name = "webgoat"
       v.memory = 2048
     end
+
+    instance.vm.provision "shell", inline: <<-SHELL
+      echo "--- starting WebGoat server ---"
+      nohup java -jar webgoat-server-8.0.0.M26.jar --server.port=8080 --server.address=0.0.0.0 &
+    SHELL
   end
 
   # Kali
@@ -66,10 +73,13 @@ Vagrant.configure("2") do |config|
     instance.vm.hostname = "kali"
     instance.vm.network "private_network", ip: '172.28.128.10'
 
+    instance.vm.disk :disk, size: "35GB", primary: true
+
     instance.vm.provider :virtualbox do |v|
       v.gui = false
       v.name = "kali"
       v.memory = 4096
+      v.cpus = 2
     end
 
     # provision script

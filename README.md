@@ -10,6 +10,7 @@ Course assignment returns and tooling I used during the course.
 - [H2](./h2/)
 - [H3](./h3/)
 - [H4](./h4/)
+- [H5 - Walktrough](./h5/)
 
 ## References
 

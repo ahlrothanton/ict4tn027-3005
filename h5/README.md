@@ -168,10 +168,22 @@ Solutions for week five [assignments](https://terokarvinen.com/2021/hakkerointi-
       - old version - 2017
       - probably vulnerable
 - [Love](https://app.hackthebox.eu/machines/Love)
-  - OS: Windows Server
+  - OS: Windows 7 - 10
   - Ports
     - 80/tcp - HTTP
       - Apache 2.4.46
+    - 135/tcp - msrpc
+      - Microsoft Windows RPC
+    - 139/tcp - netbios-ssn
+      - Microsoft Windows netbios-ssn
+    - 443/tcp - HTTPS
+      - Apache 2.4.46
+    - 445/tcp - microsoft-ds
+    - 3306/tcp - MySQL
+      - MariaDB
+    - 5000/tcp - HTTP
+      - Apache 2.4.46
+  - Don't know much about windows services, so would need to do a lot of investigation.
 
 ---
 

@@ -216,3 +216,8 @@ TBA.
 - [nikto](https://github.com/sullo/nikto)
 - [DirBuster](https://tools.kali.org/web-applications/dirbuster#:~:text=DirBuster%20is%20a%20multi%20threaded,pages%20and%20applications%20hidden%20within.)
 - [MSFVenom](https://www.offensive-security.com/metasploit-unleashed/msfvenom/)
+- [HackTheBox.eu, Delivery](https://app.hackthebox.eu/machines/Delivery)
+- [HackTheBox.eu, ScriptKiddie](https://app.hackthebox.eu/machines/ScriptKiddie)
+- [HackTheBox.eu, Spectra](https://app.hackthebox.eu/machines/Spectra)
+- [HackTheBox.eu, Armageddon](https://app.hackthebox.eu/machines/Armageddon)
+- [HackTheBox.eu, Love](https://app.hackthebox.eu/machines/Love)

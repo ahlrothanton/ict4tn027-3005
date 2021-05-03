@@ -6,6 +6,10 @@ Solutions for week five [assignments](https://terokarvinen.com/2021/hakkerointi-
 
 * [Assignments](#assignements)
   * [z) Read and reference materials](#z-read-and-reference-materials)
+  * [a) Try tool](#a-try-tool)
+  * [b) Recon and analyze 5 htb](#b-recon-and-analyze-5-htb)
+  * [c) Identify 1-3 walkthrough(s)](#c-identify-1-3 walkthroughs)
+  * [h) Hack a box from HackTheBox](#h-hack-a-box-from-hackthebox)
 * [References](#references)
 
 ---
@@ -106,7 +110,6 @@ Solutions for week five [assignments](https://terokarvinen.com/2021/hakkerointi-
     - managed to upgrade privileges to root
       - user was able to run PHP without password
       - change root password hash to alices password hash in /etc/shadow
-
 
 ---
 

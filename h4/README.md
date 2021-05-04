@@ -226,16 +226,6 @@ We could see that the connection was reset and get request to /nmaplowercheckXXX
 
 ---
 
-### g) Recon actively HackTheBox machines with other tooling
-
-- TBA
-
----
-
-### h) HackTheBox
-
-TBA.
-
 ## References
 
 - [terokarvinen.com, H4 assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h4-aktiivinen-tiedustelu-ja-nmap)
@@ -243,3 +233,4 @@ TBA.
 - [github.com, MASSSCAN](https://github.com/robertdavidgraham/masscan)
 - [github.com, UDP Protocol Scanner](https://github.com/CiscoCXSecurity/udp-proto-scanner)
 - [github.com, EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness)
+- [HackTheBox.eu, Love](https://app.hackthebox.eu/machines/Love)

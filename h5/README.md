@@ -1,4 +1,4 @@
-# H5 - Walktrough
+# H5 - Walkthrough
 
 Solutions for week five [assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h5-walktrough).
 

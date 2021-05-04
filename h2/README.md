@@ -1,4 +1,4 @@
-# H2
+# H2 - Cyber Kill Chain
 
 Solutions for week two assignments.
 

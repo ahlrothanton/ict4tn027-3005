@@ -6,11 +6,11 @@ Course assignment returns and tooling I used during the course.
 
 ## Assignments
 
-- [H1](./h1/)
-- [H2](./h2/)
-- [H3](./h3/)
-- [H4](./h4/)
-- [H5 - Walktrough](./h5/)
+- [H1 - HackTheBox](./h1/)
+- [H2 - Cyber Kill Chain](./h2/)
+- [H3 - Social Engineering](./h3/)
+- [H4 - Active Recon and Nmap](./h4/)
+- [H5 - Walkthrough](./h5/)
 
 ## References
 

@@ -6,3 +6,6 @@
 
 # vagrant
 .vagrant
+
+# openvpn config
+*.ovpn

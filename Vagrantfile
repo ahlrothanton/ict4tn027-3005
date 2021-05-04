@@ -68,19 +68,27 @@ Vagrant.configure("2") do |config|
 
   # Kali
   config.vm.define "kali" do |instance|
+
+    # select vagrant box
     instance.vm.box = "kalilinux/rolling"
 
+    # setup networking
     instance.vm.hostname = "kali"
     instance.vm.network "private_network", ip: '172.28.128.10'
 
+    # configure disk size for the instance
     instance.vm.disk :disk, size: "35GB", primary: true
 
+    # configure instance specification
     instance.vm.provider :virtualbox do |v|
       v.gui = false
       v.name = "kali"
       v.memory = 4096
       v.cpus = 2
     end
+
+    # sync this directory to remote machine
+    instance.vm.synced_folder '.', '/home/vagrant/data'
 
     # provision script
     instance.vm.provision "shell", inline: <<-SHELL

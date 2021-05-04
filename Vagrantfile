@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Kali
-  config.vm.define "kali" do |instance|
+  config.vm.define "kali", primary: true do |instance|
 
     # select vagrant box
     instance.vm.box = "kalilinux/rolling"

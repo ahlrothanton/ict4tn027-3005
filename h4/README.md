@@ -10,7 +10,7 @@ Solutions for week four [assignments](https://terokarvinen.com/2021/hakkerointi-
   * [b) Nmap functionality](#b-nmap-functionality)
   * [c) Ninja ways](#c-ninja-ways)
   * [d) UDP-scan](#d-udp-scan)
-  * [e) Open connection to HackTheBoxin](#e-open-connection-to-hackthebox)
+  * [e) Connect into HackTheBox network and verify](#e-connect-into-hackthebox-network-and-verify)
   * [f) Recon actively some HackTheBox machines](#f-recon-actively-some-hackthebox-machines)
   * [g) Recon actively HackTheBox machines with other tooling](#g-recon-actively-hackthebox-machines-with-other-tooling)
   * [h) HackTheBox](#h-hackthebox)
@@ -143,24 +143,86 @@ Tässä a-kohdassa jokainen alakohta edellyttää siepattujen pakettien analyysi
 
 ### c) Ninja ways
 
-- TBA
+- I setup a local http server using Python
+
+  ```shell
+  python3 -m http.server
+  ```
+
+- Then I ran nmap scan against it
+
+  ```shell
+  nmap -sV localhost -p 8000
+  ```
+
+- The scan was very visible in the http server
+
+    ![NMAP Scan](./img/0_nmap_http.png)
+
+We could see that the connection was reset and get request to /nmaplowercheckXXX path was made, so one could determine that this was nmap scan from logs.
 
 ---
 
 ### d) UDP-scan
 
-- TBA
+- Most common UDP services would be DNS, media streaming services, game services, local broadcasts, etc.
+- UDP scanning is difficult as you don't get a response to UDP packet.
+- Using the --reason flag with NMAP tells us why the connection is marked as filtered. For example scanning local DNS port tells us the port is not reachable using the --reason flag
+
+  ```shell
+  sudo nmap -sU localhost -p 53 --reason
+
+  53/udp closed domain  port-unreach ttl 64
+  ```
+
 ---
 
-### e) Open connection to HackTheBoxin
+### e) Connect into HackTheBox network and verify
 
-- TBA
+- I selected [HTB: Love](https://app.hackthebox.eu/machines/Love) machine and downloaded OpenVPN configuration beforehand.
+- First I setup a Kali Vagrant box. We sync the OpenVPN configuration to the machine
+
+  ```shell
+  vagrant up kali
+  vagrant ssh kali
+  ```
+
+- when Kali is running, I install OpenVPN for opening the VPN connection to HackTheBox
+
+  ```shell
+  sudo apt update
+  sudo apt install -y openvpn
+  ```
+
+- then I ran OpenVPN with the configuration file to establish connection
+
+  ```shell
+  sudo openvpn config.ovpn
+  ```
+
+- Tested, that I'm connected to HackTheBox by pinging the target machine
+
+  ```shell
+  └─$ ping -c 1 10.10.14.118
+  PING 10.10.14.118 (10.10.14.118) 56(84) bytes of data.
+  64 bytes from 10.10.14.118: icmp_seq=1 ttl=64 time=0.015 ms
+
+  --- 10.10.14.118 ping statistics ---
+  1 packets transmitted, 1 received, 0% packet loss, time 0ms
+  rtt min/avg/max/mdev = 0.015/0.015/0.015/0.000 ms
+  ```
 
 ---
 
 ### f) Recon actively some HackTheBox machines
 
-- TBA
+- I ran aggressive NMAP scan against the machine previously set up
+
+  ![NMAP Scan](./img/1_nmap_recon.png)
+
+- We can see that there is only single port open, which is 22/tcp, that is running OpenSSH version 8.4p1
+- The box is most likely running Debian based Linux distribution
+- We can see from the network distance, that the machine is 0 hops away, meaning we are in the same network.
 
 ---
 

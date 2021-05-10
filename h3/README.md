@@ -303,7 +303,7 @@ I didn't have time to complete this one yet.
 
 ## References
 
-- [terokarvinen.com, H3 assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h3-social-engineering-ja-vahan-vuohikin)
+- [terokarvinen.com, H3 assignment](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h3-social-engineering-ja-vahan-vuohikin)
 - [OWASP 10, 2017](https://github.com/OWASP/Top10/raw/master/2017/OWASP%20Top%2010-2017%20(en).pdf)
 - [Santos et al 2018: Hacking Web Applications The Art of Hacking Series LiveLessons (video): Security Penetration Testing for Today's DevOps and Cloud Environments: Lesson 5: Authentication and Session Management Vulnerabilities](https://learning.oreilly.com/videos/hacking-web-applications/9780135261422/9780135261422-hwap_01_05_00_00)
 - [Percival & Samancioglu 2020: The Complete Ethical Hacking Course (video): Chapter 21: Cross Site Scripting](https://learning.oreilly.com/videos/the-complete-ethical/9781839210495/9781839210495-video21_1)

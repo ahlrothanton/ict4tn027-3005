@@ -289,7 +289,7 @@ I started browsing what files there were and I found one particularly intereseti
 
 ## References
 
-- [terokarvinen.com, H5 assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h5-walktrough)
+- [terokarvinen.com, H5 assignment](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h5-walktrough)
 - [0xdf.gitlab.io, HTB: Laboratory](https://0xdf.gitlab.io/2021/04/17/htb-laboratory.html)
 - [0xdf.gitlab.io, HTB: Luanne](https://0xdf.gitlab.io/2021/03/27/htb-luanne.html)
 - [0xdf.gitlab.io, HTB: Optimum](https://0xdf.gitlab.io/2021/03/17/htb-optimum.html)

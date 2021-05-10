@@ -1,6 +1,6 @@
 # ICT4TN027-3005
 
-Course assignment returns and tooling I used during the course.
+Course assignments and tools I've used during the course.
 
 ---
 
@@ -11,6 +11,9 @@ Course assignment returns and tooling I used during the course.
 - [H3 - Social Engineering](./h3/)
 - [H4 - Active Recon and Nmap](./h4/)
 - [H5 - Walkthrough](./h5/)
+- [H6 - TBA](./h6/)
+
+---
 
 ## References
 
@@ -18,7 +21,7 @@ Course assignment returns and tooling I used during the course.
 
 ---
 
-## How to use my Vagrant setup
+## How to use the Vagrant setup
 
     vagrant up
 

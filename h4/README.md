@@ -228,7 +228,7 @@ We could see that the connection was reset and get request to /nmaplowercheckXXX
 
 ## References
 
-- [terokarvinen.com, H4 assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h4-aktiivinen-tiedustelu-ja-nmap)
+- [terokarvinen.com, H4 assignment](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h4-aktiivinen-tiedustelu-ja-nmap)
 - [nmap.org, NMAP](https://nmap.org)
 - [github.com, MASSSCAN](https://github.com/robertdavidgraham/masscan)
 - [github.com, UDP Protocol Scanner](https://github.com/CiscoCXSecurity/udp-proto-scanner)

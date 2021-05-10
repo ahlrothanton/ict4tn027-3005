@@ -116,33 +116,58 @@ I used password kissa123 and hashed it with sha1, sha256 and md5. We then crack 
     - crack the hash with johntheripper
 
       ```shell
-      john sha256.txt
+      john --format=raw-sha256 sha256.txt
       ```
 
     - hash was cracked to kissa123
 
       ```text
+      Using default input encoding: UTF-8
+      Loaded 1 password hash (Raw-SHA256 [SHA256 256/256 AVX2 8x])
+      Warning: poor OpenMP scalability for this hash type, consider --fork=2
+      Will run 2 OpenMP threads
+      Proceeding with single, rules:Single
+      Press 'q' or Ctrl-C to abort, almost any other key for status
+      Almost done: Processing the remaining buffered candidate passwords, if any.
+      Proceeding with wordlist:/usr/share/john/password.lst, rules:Wordlist
+      Proceeding with incremental:ASCII
+      kissa123         (?)
+      1g 0:00:01:21 DONE 3/3 (2021-05-10 05:21) 0.01234g/s 26209Kp/s 26209Kc/s 26209KC/s kissirlz..kishbed1
+      Use the "--show --format=Raw-SHA256" options to display all of the cracked passwords reliably
+      Session completed
       ```
 
   - md5 / md5sum | openssl md5
     - create the hash
 
       ```shell
-      echo -n kissa123 | openssl md5 > md5.txt
+      echo -n kissa123 | openssl md5 | awk '{print $2}' > md5.txt
       ```
 
     - crack the hash with johntheripper
 
       ```shell
-      john md5.txt
+      john --format=Raw-MD5 md5.txt
       ```
 
     - hash was cracked to kissa123
 
       ```text
+      Using default input encoding: UTF-8
+      Loaded 1 password hash (Raw-MD5 [MD5 256/256 AVX2 8x3])
+      Warning: no OpenMP support for this hash type, consider --fork=2
+      Proceeding with single, rules:Single
+      Press 'q' or Ctrl-C to abort, almost any other key for status
+      Almost done: Processing the remaining buffered candidate passwords, if any.
+      Proceeding with wordlist:/usr/share/john/password.lst, rules:Wordlist
+      Proceeding with incremental:ASCII
+      kissa123         (?)
+      1g 0:00:00:42 DONE 3/3 (2021-05-10 05:26) 0.02336g/s 49618Kp/s 49618Kc/s 49618KC/s kissalet..kissa133
+      Use the "--show --format=Raw-MD5" options to display all of the cracked passwords reliably
+      Session completed
       ```
 
-Doing this was quite slow on a Kali Linux running on a VirtualBox virtual machine.
+Doing this was quite slow on a Kali Linux running on a VirtualBox virtual machine, but cracking these hashes is stupidly easy and fast on a real machine.
 
 ---
 

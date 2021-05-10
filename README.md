@@ -1,6 +1,6 @@
 # ICT4TN027-3005
 
-Course assignments and tools I've used during the course.
+Course assignments and tools I've used for [ICT4TN027-3005 course](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/).
 
 ---
 
@@ -11,7 +11,7 @@ Course assignments and tools I've used during the course.
 - [H3 - Social Engineering](./h3/)
 - [H4 - Active Recon and Nmap](./h4/)
 - [H5 - Walkthrough](./h5/)
-- [H6 - TBA](./h6/)
+- [H6 - Hash](./h6/)
 
 ---
 

@@ -1,4 +1,4 @@
-# H6
+# H6 - Hash
 
 Solutions for week six [assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h6-viimeista-viedaan).
 

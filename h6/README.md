@@ -106,7 +106,7 @@ I used password kissa123 and hashed it with sha1, sha256 and md5. We then crack 
     Session completed
     ```
 
-  - sha256 / shasum | openssl dgst -sha256
+  - sha256
     - create the hash
 
     ```shell
@@ -137,7 +137,7 @@ I used password kissa123 and hashed it with sha1, sha256 and md5. We then crack 
       Session completed
       ```
 
-  - md5 / md5sum | openssl md5
+  - md5
     - create the hash
 
       ```shell

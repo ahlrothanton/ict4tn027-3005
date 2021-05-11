@@ -108,3 +108,4 @@ user
 nimda
 administrator
 root
+vagrant

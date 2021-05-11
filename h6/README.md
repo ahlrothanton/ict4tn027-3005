@@ -233,6 +233,25 @@ Doing this was quite slow on a Kali Linux running on a VirtualBox virtual machin
 
 ---
 
+## f) Try wordlist on other targets than web
+
+- Simple example against SSH on other Vagrant machine on my network
+
+  ```shell
+  hydra -l vagrant -P c_wordlist.txt 172.28.128.4 ssh
+  ```
+
+Hydra finds the correct password using dictionary attack.
+
+---
+
+## g) Crack multiple password protected files
+
+TBA.
+
+
+---
+
 ## References
 
 - [Terokarvinen.com, H6 assignment](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h6-viimeista-viedaan)

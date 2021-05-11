@@ -211,7 +211,7 @@ Doing this was quite slow on a Kali Linux running on a VirtualBox virtual machin
   https://github.com/openwall/john/blob/bleeding-jumbo/run/office2john.py
   ```
 
-- run the tool to extract the hash
+- run the tool to extract the password hash in format john can handle
 
   ```shell
   python office2john.py e_top_secret.docx > word_hash.txt

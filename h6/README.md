@@ -11,6 +11,7 @@ Solutions for week six [assignments](https://terokarvinen.com/2021/hakkerointi-k
   * [c) Create a wordlist](#c-create-a-wordlist)
   * [d) Try wordlist attack](#d-try-wordlist-attack)
   * [e) Crack some files password protection](#e-crack-some-files-password-protection)
+  * [g) Crack multiple password protected files](#g-crack-multiple-password-protected-files)
 * [References](#references)
 
 ---
@@ -247,8 +248,34 @@ Hydra finds the correct password using dictionary attack.
 
 ## g) Crack multiple password protected files
 
-TBA.
+- In addition to the [MS Word document](#e-crack-some-files-password-protection), I created two encrypted files([zip](./g_secret.zip) and [pdf](./g_secret.pdf)).
+- I started with the zipped file by getting the hash in correct format for john
 
+  ```shell
+  zip2john g_secret.zip > g_secret_zip_hash.txt
+  ```
+
+- I then used john to brute force the password with a wordlist
+
+  ```shell
+  john --wordlist=c_wordlist.txt g_secret_zip_hash.txt
+  ```
+
+- john found the password relatively fast. I'll figure out how to crack the encrypted pdf file next
+
+- again we need to get hash in correct format
+
+  ```shell
+  perl pdf2john.pl g_secret.pdf > g_secret_pdf_hash.txt
+  ```
+
+- then we use john to brute force the password
+
+  ```shell
+  john --wordlist=c_wordlist.txt g_secret_pdf_hash.txt
+  ```
+
+- again john found the password really fast
 
 ---
 

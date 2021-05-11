@@ -284,4 +284,5 @@ Hydra finds the correct password using dictionary attack.
 - [Terokarvinen.com, H6 assignment](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h6-viimeista-viedaan)
 - [Santos et al 2017: Security Penetration Testing - The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials](https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00)
 - [null-byte.wonderhowto.com, Crack Password Protected Microsoft Office Files](https://null-byte.wonderhowto.com/how-to/crack-password-protected-microsoft-office-files-including-word-docs-excel-spreadsheets-0193959/)
-- [Openwall, Office2John](https://github.com/openwall/john/blob/bleeding-jumbo/run/office2john.py)
+- [Openwall, office2John](https://github.com/openwall/john/blob/bleeding-jumbo/run/office2john.py)
+- [Openwall, pdf2John](https://github.com/openwall/john/blob/bleeding-jumbo/run/pdf2john.pl)

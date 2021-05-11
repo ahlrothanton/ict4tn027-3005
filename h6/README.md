@@ -10,6 +10,7 @@ Solutions for week six [assignments](https://terokarvinen.com/2021/hakkerointi-k
   * [b) Create three hashes and crack them with Hashcat](#b-create-three-hashes-and-crack-them-with-hashcat)
   * [c) Create a wordlist](#c-create-a-wordlist)
   * [d) Try wordlist attack](#d-try-wordlist-attack)
+  * [e) Crack some files password protection](#e-crack-some-files-password-protection)
 * [References](#references)
 
 ---
@@ -203,7 +204,32 @@ Doing this was quite slow on a Kali Linux running on a VirtualBox virtual machin
 
 ## e) Crack some files password protection
 
-TBA.
+- I created password protected MS Word [document](./e_top_secret.docx) and I followed a guide from an [article](https://null-byte.wonderhowto.com/how-to/crack-password-protected-microsoft-office-files-including-word-docs-excel-spreadsheets-0193959/) on how to crack office passwords
+- I downloaded [office2john tool](https://github.com/openwall/john/blob/bleeding-jumbo/run/office2john.py)
+
+  ```shell
+  https://github.com/openwall/john/blob/bleeding-jumbo/run/office2john.py
+  ```
+
+- run the tool to extract the hash
+
+  ```shell
+  python office2john.py e_top_secret.docx > word_hash.txt
+  ```
+
+- we then use JohnTheRipper to bruteforce the file password using the same [wordlist](./c_wordlist.txt) we created earlier
+
+  ```shell
+  john word_hash.txt --wordlist=c_wordlist.txt
+  ```
+
+- I tried also with Hashcat and it worked as well
+
+  ```shell
+  hashcat -a 0 -m 9600 --username word_hash.txt c_wordlist.txt
+  ```
+
+- Both of these solutions found the password from wordlist relatively fast
 
 ---
 
@@ -211,3 +237,5 @@ TBA.
 
 - [Terokarvinen.com, H6 assignment](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h6-viimeista-viedaan)
 - [Santos et al 2017: Security Penetration Testing - The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials](https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00)
+- [null-byte.wonderhowto.com, Crack Password Protected Microsoft Office Files](https://null-byte.wonderhowto.com/how-to/crack-password-protected-microsoft-office-files-including-word-docs-excel-spreadsheets-0193959/)
+- [Openwall, Office2John](https://github.com/openwall/john/blob/bleeding-jumbo/run/office2john.py)

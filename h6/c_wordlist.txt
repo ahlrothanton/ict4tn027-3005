@@ -103,3 +103,8 @@ Password1
 testi123
 admin123
 kissa123
+daniel123
+user
+nimda
+administrator
+root

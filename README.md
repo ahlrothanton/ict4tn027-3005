@@ -1,6 +1,6 @@
 # ICT4TN027-3005
 
-Course assignments and tools I've used for [ICT4TN027-3005 course](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/).
+Course assignment returns and tools for [Penetration Testing Course: ICT4TN027-3005](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/).
 
 ---
 

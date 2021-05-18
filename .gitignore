@@ -1,5 +1,6 @@
-# atom
+# ide
 .atom
+.vscode
 
 # macos
 .DS_Store
@@ -9,3 +10,6 @@
 
 # openvpn config
 *.ovpn
+
+## python
+.venv

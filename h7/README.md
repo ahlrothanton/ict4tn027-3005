@@ -15,13 +15,15 @@ Solutions for week seven [assignments](https://terokarvinen.com/2021/hakkerointi
 
 ### a) Solutions
 
-- [github.com/ahlrothanton, H1](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h1)
-- [github.com/ahlrothanton, H2](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h2)
-- [github.com/ahlrothanton, H3](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h3)
-- [github.com/ahlrothanton, H4](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h4)
-- [github.com/ahlrothanton, H5](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h5)
-- [github.com/ahlrothanton, H6](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h6)
-- [github.com/ahlrothanton, H7](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h7)
+All solutions can be found from [my Github page](https://github.com/ahlrothanton/ict4tn027-3005):
+
+- [H1](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h1)
+- [H2](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h2)
+- [H3](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h3)
+- [H4](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h4)
+- [H5](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h5)
+- [H6](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h6)
+- [H7](https://github.com/ahlrothanton/ict4tn027-3005/tree/main/h7)
 
 ----
 

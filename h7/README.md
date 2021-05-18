@@ -1,4 +1,4 @@
-# H7 - Labratory
+# H7 - Lab
 
 Solutions for week seven [assignments](https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/#h7-labra-lahestyy).
 

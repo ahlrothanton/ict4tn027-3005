@@ -12,6 +12,7 @@ Course assignment returns and tools for [Penetration Testing Course: ICT4TN027-3
 - [H4 - Active Recon and Nmap](./h4/)
 - [H5 - Walkthrough](./h5/)
 - [H6 - Hash](./h6/)
+- [H6 - Lab](./h7/)
 
 ---
 

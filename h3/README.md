@@ -5,12 +5,12 @@ Solutions for week three [assignments](https://terokarvinen.com/2021/hakkerointi
 ## Table of Contents
 
 * [Assignments](#assignements)
-  * [z](#z-read-and-reference-materials-from-the-week)
-  * [a](#a-analyze-social-engineering-hack)
-  * [b1](#b1-read-and-reference-one-of-rikus-sources)
-  * [b2](#b2)
-  * [c](#c-add-a-link-to-your-assignments-to-course-comments)
-  * [d](#d-try-the-chrome-zeroday-exploit)
+  * [z) Read and Reference Materials from the Week](#z-read-and-reference-materials-from-the-week)
+  * [a) Analyze a social engineering hack](#a-analyze-social-engineering-hack)
+  * [b1) Read and reference one of Riku's sources](#b1-read-and-reference-one-of-rikus-sources)
+  * [b2) Solve WebGoat Assignments](#b2-solve-webgoat-assignments)
+  * [c) Add a link to your assignments to course comments](#c-add-a-link-to-your-assignments-to-course-comments)
+  * [d) Try the Chrome ZeroDay exploit](#d-try-the-chrome-zeroday-exploit)
 * [References](#references)
 
 ---
